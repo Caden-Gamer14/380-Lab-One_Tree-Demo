@@ -140,13 +140,25 @@ class BinarySearchTree{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a smallest key
-	   */
-   public int getMin(Node root){
-         //implement in here
-      return 0;
+	/*
+	a method to find the node in the tree
+	with a smallest key
+   Creates the getMin method to find the min value of the root. Uses 
+   currentNode.left to traverse through the node and 
+   determines the min value with a while loop. 
+	*/
+   public int getMin(Node root) { 
+   
+      Node currentNode = root; 
+      
+      while (currentNode.left != null) { 
+      
+         currentNode = currentNode.left; 
+         
+      } 
+      
+      return currentNode.value; 
+      
    }
 	  
 	  
@@ -224,6 +236,7 @@ public class TreeDemov1{
       
       System.out.println("locate 18 :   " + t1.find(t1.root, 18)); 
       System.out.println("locate 100 :   " + t1.find(t1.root, 100)); 
+      
       System.out.println("min value :   " + t1.getMin(t1.root)); 
       System.out.println("max value :   " + t1.getMax(t1.root)); 
    }  
