@@ -163,14 +163,26 @@ class BinarySearchTree{
 	  
 	  
 	  
-	   /*
-	   a method to find the node in the tree
-	   with a largest key
-	   */
-   public int getMax(Node root){
-         //implement in here
-      return 0;
-   }
+	/*
+	a method to find the node in the tree
+	with a largest key
+   Creates the getMax method to find the max value of the root. Uses 
+   currentNode.right to traverse through the node and 
+   determines the max value with a while loop  
+	*/
+   public int getMax(Node root) { 
+   
+      Node currentNode = root; 
+      
+      while (currentNode.right != null) { 
+      
+         currentNode = currentNode.right; 
+         
+      } 
+      
+      return currentNode.value; 
+      
+   } 
 	   
 	   
 	   
@@ -239,5 +251,10 @@ public class TreeDemov1{
       
       System.out.println("min value :   " + t1.getMin(t1.root)); 
       System.out.println("max value :   " + t1.getMax(t1.root)); 
+      
+      t1.root = t1.delete(t1.root, 18); 
+      System.out.print("In-order after deleting 18: "); 
+      t1.inOrderTraversal(t1.root); 
+      System.out.println();  
    }  
 }
