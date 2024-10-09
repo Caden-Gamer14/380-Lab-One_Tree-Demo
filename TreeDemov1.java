@@ -109,13 +109,33 @@ class BinarySearchTree{
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
-	   */
-   public boolean find(Node root, int key){
-   	   //implement in here
-      return true;
+	/*
+	a method to find the node in the tree
+	with a specific value. 
+   Creates a boolean method called find in order to go through the root using the
+   root.left and root.right functions, and finds the necessary values with an if else if else statement. 
+	*/
+   public boolean find(Node root, int key) { 
+   
+      if (root == null) { 
+      
+         return false; 
+         
+      } 
+      
+      if (root.value == key) { 
+      
+         return true; 
+         
+      } else if (key < root.value) { 
+      
+         return find(root.left, key); 
+         
+      } else { 
+      
+         return find(root.right, key); 
+         
+      }
    }
 	   
 	   
@@ -201,5 +221,10 @@ public class TreeDemov1{
       System.out.print("post-order:   "); 
       t1.postOrderTraversal(t1.root); 
       System.out.println(); 
+      
+      System.out.println("locate 18 :   " + t1.find(t1.root, 18)); 
+      System.out.println("locate 100 :   " + t1.find(t1.root, 100)); 
+      System.out.println("min value :   " + t1.getMin(t1.root)); 
+      System.out.println("max value :   " + t1.getMax(t1.root)); 
    }  
 }
