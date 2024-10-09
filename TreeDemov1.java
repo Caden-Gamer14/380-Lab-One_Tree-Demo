@@ -87,17 +87,24 @@ class BinarySearchTree{
          inOrderTraversal(root.right); 
          
       }
-   }
+   }   
 	   
-	   
-	   
-	   /*
-	   post-order traversal
-	   */
-	  
-   public void postOrderTraversal(Node root){
-         //implement in here
-   	   
+	/*
+   post-order traversal
+   Prints the value of every node in poster order traversal. Uses the root.left and root.right 
+   functions to pass through the post order traversal. 
+	*/
+   public void postOrderTraversal(Node root) { 
+   
+      if (root != null) { 
+      
+         postOrderTraversal(root.left); 
+         
+         postOrderTraversal(root.right); 
+         
+         System.out.print(root.value + " "); 
+         
+      }
    }
 	   
 	   
@@ -187,6 +194,12 @@ public class TreeDemov1{
       t1.inOrderTraversal(t1.root);
       System.out.println();
               
-         
+      System.out.print("pre-order :   "); 
+      t1.preOrderTraversal(t1.root); 
+      System.out.println(); 
+      
+      System.out.print("post-order:   "); 
+      t1.postOrderTraversal(t1.root); 
+      System.out.println(); 
    }  
 }
